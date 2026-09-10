@@ -283,3 +283,35 @@ footer {
         text-align: center;
     }
 }
+/* Full-screen photo viewer */
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 30px;
+}
+
+.photo-viewer img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    font-weight: 200;
+}
+
+.close-viewer:hover {
+    opacity: 0.6;
+}
