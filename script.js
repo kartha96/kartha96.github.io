@@ -30,13 +30,21 @@ filters.forEach(filter => {
 });
 
 
-// Simple photo viewer
+// Photo viewer + Google Analytics tracking
 
 photos.forEach(photo => {
 
     photo.addEventListener("click", () => {
 
         const image = photo.querySelector("img");
+
+        // Track which photo was opened
+        if (typeof gtag === "function") {
+            gtag("event", "photo_open", {
+                photo_name: image.alt,
+                photo_file: image.src
+            });
+        }
 
         const viewer = document.createElement("div");
 
